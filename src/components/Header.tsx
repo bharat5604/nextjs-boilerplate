@@ -14,6 +14,8 @@ const Header = (props: Props) => {
     try {
       await fetch(`http://localhost:8000/auth`, {
         method: "POST",
+        credentials: "include",
+        mode: "same-origin",
         headers: {
           "Content-Type": "application/json",
         },
