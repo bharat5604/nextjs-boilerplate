@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {};
 
@@ -10,6 +10,12 @@ const Header = (props: Props) => {
     username: "bharat",
     password: "test",
   };
+
+  useEffect(() => {
+    fetch("http://localhost:8000/auth/refresh")
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+  }, []);
   const handleLogin = async () => {
     try {
       await fetch(`http://localhost:8000/auth`, {
