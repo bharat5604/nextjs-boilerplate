@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -12,21 +13,27 @@ const Header = (props: Props) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/auth/refresh")
+    fetch("http://localhost:8000/auth/refresh", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((result) => console.log(result));
   }, []);
   const handleLogin = async () => {
+    console.log("jsjsjsjsjsj");
+
     try {
-      await fetch(`http://localhost:8000/auth`, {
+      const response = await axios.post(`http://localhost:8000/auth`, user, {
         method: "POST",
-        credentials: "include",
-        mode: "same-origin",
+        withCredentials: true,
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(user),
-      }).then((res) => res.json());
+      });
     } catch (error) {
       console.log("eror", error);
     }
