@@ -9,7 +9,7 @@ const Login = () => {
     username: "",
     password: "",
   });
-  const navigate = useRouter();
+  //   const router = useRouter();
   let api = useAxios();
   const handleLogin = async () => {
     try {
@@ -23,7 +23,7 @@ const Login = () => {
       cookieCutter.set("accessToken", response.data.accessToken);
       console.log("response", response);
       if (response.data?.accessToken) {
-        navigate.push("/");
+        // router.push("/");
       }
     } catch (error) {
       console.log("eror", error);

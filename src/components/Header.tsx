@@ -5,6 +5,7 @@ import useAxios from "@/helper/useAxios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import cookieCutter from "cookie-cutter";
+import axios from "axios";
 
 type Props = {};
 
@@ -31,7 +32,7 @@ const Header = (props: Props) => {
 
   const api = useAxios();
   const handleLogout = () => {
-    api.post("/auth/logout");
+    axios.post("http://localhost:8000/auth/logout", { withCredentials: true });
   };
 
   return (
