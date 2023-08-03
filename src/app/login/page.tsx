@@ -2,12 +2,15 @@
 import axios from "axios";
 import { useState } from "react";
 import cookieCutter from "cookie-cutter";
+import useAxios from "@/helper/useAxios";
+import { useRouter } from "next/router";
 const Login = () => {
   const [cred, setCred] = useState({
     username: "",
     password: "",
   });
-
+  const navigate = useRouter();
+  let api = useAxios();
   const handleLogin = async () => {
     try {
       const response = await axios.post(`http://localhost:8000/auth`, cred, {
@@ -19,6 +22,9 @@ const Login = () => {
       });
       cookieCutter.set("accessToken", response.data.accessToken);
       console.log("response", response);
+      if (response.data?.accessToken) {
+        navigate.push("/");
+      }
     } catch (error) {
       console.log("eror", error);
     }
