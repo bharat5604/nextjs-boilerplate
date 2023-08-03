@@ -1,4 +1,4 @@
-import { cookieCutter } from "cookie-cutter";
+import cookieCutter from "cookie-cutter";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import dayjs from "dayjs";
@@ -7,8 +7,8 @@ const baseURL = "http://localhost:8000";
 
 const useAxios = () => {
   let authTokens = "";
-  if (cookieCutter?.get("accessToken" || "")) {
-    authTokens = cookieCutter.get("accessToken" || "");
+  if (cookieCutter?.get("accessToken")) {
+    authTokens = cookieCutter.get("accessToken");
   }
 
   const axiosInstance = axios.create({
