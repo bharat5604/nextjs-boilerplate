@@ -1,7 +1,7 @@
 "use client";
 import axios from "axios";
 import { useState } from "react";
-
+import cookieCutter from "cookie-cutter";
 const Login = () => {
   const [cred, setCred] = useState({
     username: "",
@@ -17,6 +17,8 @@ const Login = () => {
           "Content-Type": "application/json",
         },
       });
+      cookieCutter.set("accessToken", response.data.accessToken);
+      console.log("response", response);
     } catch (error) {
       console.log("eror", error);
     }
