@@ -23,27 +23,13 @@ const Header = (props: Props) => {
       .then((res) => res.json())
       .then((result) => console.log(result));
   }, []);
-  const handleLogin = async () => {
-    console.log("jsjsjsjsjsj");
 
-    try {
-      const response = await axios.post(`http://localhost:8000/auth`, user, {
-        method: "POST",
-        withCredentials: true,
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-    } catch (error) {
-      console.log("eror", error);
-    }
-  };
   return (
     <div className="bg-blue-700 py-2">
       <div className="container">
         <div className="flex">
           <Link href="/">Home</Link>
-          <button onClick={handleLogin}>Login</button>
+          <Link href="/login">Login</Link>
         </div>
       </div>
     </div>
