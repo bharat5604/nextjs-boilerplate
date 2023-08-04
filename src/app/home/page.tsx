@@ -11,7 +11,7 @@ export default function Home() {
     const fetchUsers = async () => {
       const { data } = await axios.get("https://panorbit.in/api/users.json");
       console.log("data", data);
-      // dispatch(getUsers(data));
+      dispatch(getUsers(data));
     };
     fetchUsers();
   }, [dispatch]);

@@ -1,7 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const isClient = typeof window !== "undefined";
+
 const initialState = {
-  users: [],
+  users: isClient ? localStorage.get("user") : [],
   user: {},
 };
 
@@ -11,6 +13,7 @@ const userSlice = createSlice({
   reducers: {
     getUsers: (state, action) => {
       state.users = action.payload.users;
+      localStorage.setItem("user", JSON.stringify(action.payload.users));
     },
     getUser: (state, action) => {
       state.user = state.users.filter(

@@ -29,7 +29,7 @@ const Header = (props: Props) => {
 
   const token = cookieCutter.get("accessToken");
 
-  const api = useAxios();
+  // const api = useAxios();
   const handleLogout = () => {
     axios.post("http://localhost:8000/auth/logout");
   };
