@@ -8,7 +8,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 const User = ({ params }: { params: { user: string } }) => {
-  const user = useAppSelector((state) => state.userReducer.user);
+  const user: any = useAppSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
