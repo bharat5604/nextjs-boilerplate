@@ -28,18 +28,17 @@ const Header = (props: Props) => {
   // }, []);
 
   const token = cookieCutter.get("accessToken");
-  console.log("token", token);
 
   const api = useAxios();
   const handleLogout = () => {
-    axios.post("http://localhost:8000/auth/logout", { withCredentials: true });
+    axios.post("http://localhost:8000/auth/logout");
   };
 
   return (
     <div className="bg-blue-700 py-2">
       <div className="container">
         <div className="flex">
-          <Link href="/">Home</Link>
+          <Link href="/home">Home</Link>
           {token ? (
             <button onClick={handleLogout}>Logout</button>
           ) : (

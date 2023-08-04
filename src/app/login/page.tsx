@@ -1,10 +1,13 @@
 "use client";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import cookieCutter from "cookie-cutter";
 import useAxios from "@/helper/useAxios";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
+import { getUsers } from "@/redux/features/usersSlice";
 const Login = () => {
+  const dispatch = useDispatch();
   const [cred, setCred] = useState({
     username: "",
     password: "",
@@ -29,6 +32,7 @@ const Login = () => {
       console.log("eror", error);
     }
   };
+
   return (
     <div className="max-w-2xl mx-auto mt-20">
       <form action="" className="bg-slate-200 rounded-lg  p-2 shadow-md">
