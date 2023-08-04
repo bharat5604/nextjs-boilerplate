@@ -1,21 +1,21 @@
 "use client";
 
 import { getUser } from "@/redux/features/usersSlice";
+import { useAppSelector } from "@/redux/store";
+import { log } from "console";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-const User = () => {
+const User = ({ params }: { params: { user: string } }) => {
+  const user = useAppSelector((state) => state.userReducer.user);
   const dispatch = useDispatch();
-  // const router = useRouter();
-  // const { user } = router.query;
-  // console.log("user", user);
 
   useEffect(() => {
-    // dispatch(getUser(user));
-  }, [dispatch]);
+    dispatch(getUser(params.user));
+  }, [dispatch, params.user]);
 
-  return <div>UserPAge</div>;
+  return <div>{user.name}</div>;
 };
 
 export default User;

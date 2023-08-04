@@ -9,7 +9,5 @@ export default function ProviderRedux({
 }: {
   children: React.ReactNode;
 }) {
-  console.log("store", store);
-
   return <Provider store={store}>{children}</Provider>;
 }
