@@ -37,7 +37,7 @@ const Login = () => {
     <div className="max-w-2xl mx-auto mt-20">
       <form action="" className="bg-slate-200 rounded-lg  p-2 shadow-md">
         <div className=" flex flex-col gap-2">
-          <label htmlFor="">UserName</label>
+          <label htmlFor="">User Name</label>
           <input
             type="text"
             placeholder="Username..."
