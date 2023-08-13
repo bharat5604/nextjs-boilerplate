@@ -84,7 +84,7 @@ export function MobileNav({ mainNavItems, sidebarNavItems }: MobileNavProps) {
                   </AccordionContent>
                 </AccordionItem>
               ))}
-              <AccordionItem value="sidebar">
+              {/* <AccordionItem value="sidebar">
                 <AccordionTrigger className="text-sm">
                   Sidebar Menu
                 </AccordionTrigger>
@@ -112,7 +112,7 @@ export function MobileNav({ mainNavItems, sidebarNavItems }: MobileNavProps) {
                     )}
                   </div>
                 </AccordionContent>
-              </AccordionItem>
+              </AccordionItem> */}
             </Accordion>
           </div>
         </ScrollArea>

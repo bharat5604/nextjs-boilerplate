@@ -41,6 +41,33 @@ export const siteConfig = {
         },
       ],
     },
+    {
+      title: "Product",
+      items: [
+        {
+          title: "Products",
+          href: "/",
+          description: "All the products we have to offer.",
+          items: [],
+        },
+        {
+          title: "Build a Board",
+          href: "/",
+          description: "Build your own custom skateboard.",
+          items: [],
+        },
+        {
+          title: "Blog",
+          href: "/",
+          description: "Read our latest blog posts.",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "About",
+      items: [],
+    },
   ] satisfies MainNavItem[],
   //   links,
   footerNav: [
@@ -79,22 +106,22 @@ export const siteConfig = {
       items: [
         {
           title: "About",
-          href: "/about",
+          href: "/",
           external: false,
         },
         {
           title: "Contact",
-          href: "/contact",
+          href: "/",
           external: false,
         },
         {
           title: "Terms",
-          href: "/terms",
+          href: "/",
           external: false,
         },
         {
           title: "Privacy",
-          href: "/privacy",
+          href: "/",
           external: false,
         },
       ],

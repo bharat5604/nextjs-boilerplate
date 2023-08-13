@@ -1,7 +1,8 @@
+import { Shell } from "@/components/shells/shell";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return <Shell>page</Shell>;
 };
 
 export default page;
