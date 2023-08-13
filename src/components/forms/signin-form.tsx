@@ -21,6 +21,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Icons } from "@/components/icons";
 import { PasswordInput } from "@/components/password-input";
+import { signIn } from "next-auth/react";
 
 type Inputs = z.infer<typeof authSchema>;
 
@@ -40,7 +41,10 @@ export function SignInForm() {
 
   function onSubmit(data: Inputs) {
     // if (!isLoaded) return;
-    router.push("/");
+    signIn("credentials", {
+      data,
+      callbackUrl: "/",
+    });
 
     startTransition(async () => {
       //   try {

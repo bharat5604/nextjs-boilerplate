@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import { env } from "@/env.mjs";
+import AuthProvider from "@/lib/sessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -69,24 +70,30 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <ProviderRedux>
-        <html lang="en" suppressHydrationWarning>
-          <head />
-          <body
-            className={cn(
-              "min-h-screen bg-background font-sans antialiased",
-              fontSans.variable,
-              fontMono.variable
-            )}
-          >
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              {children}
-              <TailwindIndicator />
-            </ThemeProvider>
-            <Toaster />
-          </body>
-        </html>
-      </ProviderRedux>
+      <AuthProvider>
+        <ProviderRedux>
+          <html lang="en" suppressHydrationWarning>
+            <head />
+            <body
+              className={cn(
+                "min-h-screen bg-background font-sans antialiased",
+                fontSans.variable,
+                fontMono.variable
+              )}
+            >
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+              >
+                {children}
+                <TailwindIndicator />
+              </ThemeProvider>
+              <Toaster />
+            </body>
+          </html>
+        </ProviderRedux>
+      </AuthProvider>
     </>
   );
 }
