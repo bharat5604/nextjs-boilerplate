@@ -1,31 +1,38 @@
-"use client";
+import { cn } from "@/lib/utils";
 
-import Link from "next/link";
+interface HeaderProps extends React.HTMLAttributes<HTMLDivElement> {
+  title: string;
+  description?: string | null;
+  size?: "default" | "sm";
+}
 
-import axios from "axios";
-
-type Props = {};
-
-const Header = (props: Props) => {
-  const user = {
-    username: "bharat",
-    password: "test",
-  };
-
-  // const api = useAxios();
-  const handleLogout = () => {
-    axios.post("http://localhost:8000/auth/logout");
-  };
-
+export function Header({
+  title,
+  description,
+  size = "default",
+  className,
+  ...props
+}: HeaderProps) {
   return (
-    <div className="bg-blue-700 py-2">
-      <div className="container">
-        <div className="flex gap-4">
-          <Link href="/home">Home</Link>
-        </div>
-      </div>
+    <div className={cn("grid gap-1", className)} {...props}>
+      <h1
+        className={cn(
+          "line-clamp-1 text-3xl font-bold tracking-tight",
+          size === "default" && "md:text-4xl"
+        )}
+      >
+        {title}
+      </h1>
+      {description ? (
+        <p
+          className={cn(
+            "line-clamp-2 text-muted-foreground",
+            size === "default" && "text-lg"
+          )}
+        >
+          {description}
+        </p>
+      ) : null}
     </div>
   );
-};
-
-export default Header;
+}
