@@ -76,7 +76,7 @@ export function SiteFooter() {
             Built by{" "}
             <a
               aria-label="Kickflip tutorial on YouTube"
-              href="https://twitter.com/sadmann17"
+              href="https://twitter.com/bharatS_rajput"
               target="_blank"
               rel="noreferrer"
               className="font-semibold transition-colors hover:text-foreground"
