@@ -12,3 +12,7 @@ export function slugify(str: string) {
     .replace(/[^\w-]+/g, "")
     .replace(/--+/g, "-");
 }
+
+export function isMacOs() {
+  return window.navigator.userAgent.includes("Mac");
+}
