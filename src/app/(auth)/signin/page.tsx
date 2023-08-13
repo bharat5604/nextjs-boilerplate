@@ -56,7 +56,7 @@ export default async function SignInPage() {
             </span>
             <Link
               aria-label="Sign up"
-              href="/signup"
+              href="/signin"
               className="text-primary underline-offset-4 transition-colors hover:underline"
             >
               Sign up
@@ -64,7 +64,7 @@ export default async function SignInPage() {
           </div>
           <Link
             aria-label="Reset password"
-            href="/signin/reset-password"
+            href="/signin"
             className="text-sm text-primary underline-offset-4 transition-colors hover:underline"
           >
             Reset password

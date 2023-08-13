@@ -23,19 +23,19 @@ export const siteConfig = {
       items: [
         {
           title: "Products",
-          href: "/products",
+          href: "/",
           description: "All the products we have to offer.",
           items: [],
         },
         {
           title: "Build a Board",
-          href: "/build-a-board",
+          href: "/",
           description: "Build your own custom skateboard.",
           items: [],
         },
         {
           title: "Blog",
-          href: "/blog",
+          href: "/",
           description: "Read our latest blog posts.",
           items: [],
         },
@@ -66,7 +66,7 @@ export const siteConfig = {
     },
     {
       title: "About",
-      items: [],
+      href: "/",
     },
   ] satisfies MainNavItem[],
   //   links,

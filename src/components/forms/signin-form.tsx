@@ -40,6 +40,7 @@ export function SignInForm() {
 
   function onSubmit(data: Inputs) {
     // if (!isLoaded) return;
+    router.push("/");
 
     startTransition(async () => {
       //   try {

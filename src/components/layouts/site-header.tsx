@@ -79,7 +79,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                   <DropdownMenuSeparator />
                   <DropdownMenuGroup>
                     <DropdownMenuItem asChild>
-                      <Link href="/dashboard/account">
+                      <Link href="/">
                         <Icons.user
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
@@ -89,7 +89,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href="/dashboard/stores">
+                      <Link href="/">
                         <Icons.terminal
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
@@ -99,7 +99,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild disabled>
-                      <Link href="/dashboard/settings">
+                      <Link href="/">
                         <Icons.settings
                           className="mr-2 h-4 w-4"
                           aria-hidden="true"
@@ -111,7 +111,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
                   </DropdownMenuGroup>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem asChild>
-                    <Link href="/signout">
+                    <Link href="/signin">
                       <Icons.logout
                         className="mr-2 h-4 w-4"
                         aria-hidden="true"
