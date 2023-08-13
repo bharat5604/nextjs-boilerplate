@@ -38,7 +38,7 @@ export function SiteHeader({ user }: SiteHeaderProps) {
   }`;
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-blue-500 dark:bg-background">
+    <header className="sticky top-0 z-40 w-full border-b bg-background">
       <div className="container flex h-16 items-center">
         <MainNav items={siteConfig.mainNav} />
         <MobileNav

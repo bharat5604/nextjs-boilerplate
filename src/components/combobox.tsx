@@ -52,7 +52,7 @@ export function Combobox() {
       }
     };
     window.addEventListener("keydown", handleKeyDown);
-    // return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   const handleSelect = React.useCallback((callback: () => unknown) => {

@@ -75,8 +75,8 @@ export function SiteFooter() {
           <div className="flex-1 text-left text-sm leading-loose text-muted-foreground">
             Built by{" "}
             <a
-              aria-label="Kickflip tutorial on YouTube"
-              href="https://twitter.com/bharatS_rajput"
+              aria-label="connect with me on github"
+              href="https://github.com/bharat5604"
               target="_blank"
               rel="noreferrer"
               className="font-semibold transition-colors hover:text-foreground"
