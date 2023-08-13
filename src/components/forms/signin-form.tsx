@@ -21,12 +21,17 @@ import {
 import { Input } from "@/components/ui/input";
 import { Icons } from "@/components/icons";
 import { PasswordInput } from "@/components/password-input";
-import { signIn } from "next-auth/react";
+
+import signIn from "@/services/authService";
+import { AxiosError } from "axios";
+import Cookies from "js-cookie";
+
 
 type Inputs = z.infer<typeof authSchema>;
 
 export function SignInForm() {
   const router = useRouter();
+  const [error, setError] = React.useState("");
   //   const { isLoaded, signIn, setActive } = useSignIn();
   const [isPending, startTransition] = React.useTransition();
 
@@ -34,35 +39,29 @@ export function SignInForm() {
   const form = useForm<Inputs>({
     resolver: zodResolver(authSchema),
     defaultValues: {
-      email: "",
+      username: "",
       password: "",
     },
   });
 
   function onSubmit(data: Inputs) {
-    // if (!isLoaded) return;
-    signIn("credentials", {
-      data,
-      callbackUrl: "/",
-    });
+
 
     startTransition(async () => {
-      //   try {
-      //     const result = await signIn.create({
-      //       identifier: data.email,
-      //       password: data.password,
-      //     });
-      //     if (result.status === "complete") {
-      //       await setActive({ session: result.createdSessionId });
-      //       router.push(`${window.location.origin}/`);
-      //     } else {
-      //       /*Investigate why the login hasn't completed */
-      //       console.log(result);
-      //     }
-      //   } catch (err) {
-      //     // catchClerkError(err);
-      //     console.log("error", err);
-      //   }
+      try {
+        const res = await signIn(data);
+        const result: any = res.data;
+        if (result) {
+          Cookies.set("accessToken", result.accessToken, { expires: 7 });
+          router.push("/");
+        }
+      } catch (error) {
+        console.log("err", error);
+        setError(
+          (error as AxiosError<{ message: string }>)?.response?.data?.message ||
+            (error as Error).toString()
+        );
+      }
     });
   }
 
@@ -72,12 +71,13 @@ export function SignInForm() {
         className="grid gap-4"
         onSubmit={(...args) => void form.handleSubmit(onSubmit)(...args)}
       >
+        <p>{error}</p>
         <FormField
           control={form.control}
-          name="email"
+          name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>username</FormLabel>
               <FormControl>
                 <Input placeholder="rodneymullen180@gmail.com" {...field} />
               </FormControl>
