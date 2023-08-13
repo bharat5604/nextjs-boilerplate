@@ -6,19 +6,19 @@ export const env = createEnv({
    * Specify your server-side environment variables schema here. This way you can ensure the app
    * isn't built with invalid env vars.
    */
-  // server: {
-  //   DATABASE_URL: z.string(),
-  //   NODE_ENV: z.enum(["development", "test", "production"]),
-  //   CLERK_SECRET_KEY: z.string(),
-  //   RESEND_API_KEY: z.string(),
-  //   EMAIL_FROM_ADDRESS: z.string().email(),
-  //   UPLOADTHING_SECRET: z.string(),
-  //   UPLOADTHING_APP_ID: z.string(),
-  //   STRIPE_API_KEY: z.string(),
-  //   STRIPE_WEBHOOK_SECRET: z.string(),
-  //   STRIPE_STD_MONTHLY_PRICE_ID: z.string(),
-  //   STRIPE_PRO_MONTHLY_PRICE_ID: z.string(),
-  // },
+  server: {
+    // DATABASE_URL: z.string(),
+    NODE_ENV: z.enum(["development", "test", "production"]),
+    // CLERK_SECRET_KEY: z.string(),
+    // RESEND_API_KEY: z.string(),
+    // EMAIL_FROM_ADDRESS: z.string().email(),
+    // UPLOADTHING_SECRET: z.string(),
+    // UPLOADTHING_APP_ID: z.string(),
+    // STRIPE_API_KEY: z.string(),
+    // STRIPE_WEBHOOK_SECRET: z.string(),
+    // STRIPE_STD_MONTHLY_PRICE_ID: z.string(),
+    // STRIPE_PRO_MONTHLY_PRICE_ID: z.string(),
+  },
 
   /**
    * Specify your client-side environment variables schema here. This way you can ensure the app
@@ -35,6 +35,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
+    NODE_ENV: process.env.NODE_ENV,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
