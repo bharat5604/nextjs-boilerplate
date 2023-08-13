@@ -16,6 +16,7 @@ specifiers:
   '@radix-ui/react-toast': ^1.1.4
   '@reduxjs/toolkit': ^1.9.5
   '@t3-oss/env-nextjs': ^0.6.0
+  '@types/js-cookie': ^3.0.3
   '@types/node': 20.4.2
   '@types/react': 18.2.15
   '@types/react-dom': 18.2.7
@@ -30,6 +31,7 @@ specifiers:
   eslint: 8.45.0
   eslint-config-next: 13.4.10
   i: ^0.3.7
+  js-cookie: ^3.0.5
   jwt-decode: ^3.1.2
   lucide-react: ^0.260.0
   next: 13.4.10
@@ -78,6 +80,7 @@ dependencies:
   eslint: 8.45.0
   eslint-config-next: 13.4.10_ko3fmmbeyij36muomfgt2u76xu
   i: 0.3.7
+  js-cookie: 3.0.5
   jwt-decode: 3.1.2
   lucide-react: 0.260.0_react@18.2.0
   next: 13.4.10_biqbaboplfbrettd7655fr4n2y
@@ -98,6 +101,7 @@ dependencies:
   zod: 3.21.4
 
 devDependencies:
+  '@types/js-cookie': 3.0.3
   daisyui: 3.5.1
 
 packages:
@@ -1478,6 +1482,10 @@ packages:
       '@types/react': 18.2.15
       hoist-non-react-statics: 3.3.2
     dev: false
+
+  /@types/js-cookie/3.0.3:
+    resolution: {integrity: sha512-Xe7IImK09HP1sv2M/aI+48a20VX+TdRJucfq4vfRVy6nWN8PYPOEnlMRSgxJAgYQIXJVL8dZ4/ilAM7dWNaOww==}
+    dev: true
 
   /@types/json-schema/7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
@@ -3068,6 +3076,11 @@ packages:
   /jiti/1.19.1:
     resolution: {integrity: sha512-oVhqoRDaBXf7sjkll95LHVS6Myyyb1zaunVwk4Z0+WPSW4gjS0pl01zYKHScTuyEhQsFxV5L4DR5r+YqSyqyyg==}
     hasBin: true
+
+  /js-cookie/3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

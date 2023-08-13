@@ -9,6 +9,7 @@ export const env = createEnv({
   server: {
     // DATABASE_URL: z.string(),
     NODE_ENV: z.enum(["development", "test", "production"]),
+    // BASE_URI: z.string(),
     // CLERK_SECRET_KEY: z.string(),
     // RESEND_API_KEY: z.string(),
     // EMAIL_FROM_ADDRESS: z.string().email(),
@@ -27,6 +28,7 @@ export const env = createEnv({
    */
   client: {
     NEXT_PUBLIC_APP_URL: z.string().url(),
+    BASE_URI: z.string().url(),
   },
 
   /**
@@ -36,6 +38,7 @@ export const env = createEnv({
   runtimeEnv: {
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NODE_ENV: process.env.NODE_ENV,
+    BASE_URI: process.env.BASE_URI,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.
