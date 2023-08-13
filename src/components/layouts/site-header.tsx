@@ -29,7 +29,7 @@ interface SiteHeaderProps {
 
     username: string;
   } | null;
-  email: string;
+  email?: string;
 }
 
 export function SiteHeader({ user }: SiteHeaderProps) {
