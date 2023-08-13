@@ -1,14 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-const isClient = typeof window !== "undefined" || window !== undefined;
-let usersData;
-if (isClient) {
-  usersData = localStorage.getItem("user")
-    ? JSON.parse(localStorage.getItem("user")!)
-    : "";
-}
+
 const initialState = {
-  users: isClient ? usersData : [],
-  user: [],
+  users: [],
+  user: {},
 };
 
 const userSlice = createSlice({
@@ -25,7 +19,7 @@ const userSlice = createSlice({
       );
       console.log("user", user);
 
-      state.user = { ...user[0] };
+      state.user = { user };
     },
   },
 });
