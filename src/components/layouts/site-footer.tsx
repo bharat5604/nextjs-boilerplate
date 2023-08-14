@@ -1,9 +1,7 @@
 import Link from "next/link";
 
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-// import { SubscribeToNewsletterForm } from "@/components/forms/subscribe-to-newsletter-form";
+
 import { Icons } from "@/components/icons";
 import { ThemeToggle } from "@/components/layouts/theme-toggle";
 import { Shell } from "@/components/shells/shell";
