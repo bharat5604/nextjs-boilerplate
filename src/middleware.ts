@@ -1,7 +1,6 @@
 export { default } from "next-auth/middleware";
 
-
-export function middleware(request: NextRequest) {
+export function middleware(request: any) {
   const path = request.nextUrl.pathname;
   const isPublicPath = path === "/signin" || path === "/signup";
 
@@ -20,4 +19,3 @@ export function middleware(request: NextRequest) {
 export const config = {
   // matcher: ["/", "/profile", "/signin", "/signup", "/verifyemail", "/home"],
 };
-

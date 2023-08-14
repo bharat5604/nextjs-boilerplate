@@ -29,5 +29,6 @@ export function catchError(err: unknown) {
 }
 
 export function isMacOs() {
-  return window.navigator.userAgent.includes("Mac");
+  const isClient = typeof window !== "undefined";
+  return isClient && window.navigator.userAgent.includes("Mac");
 }

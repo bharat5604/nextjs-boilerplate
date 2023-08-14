@@ -83,7 +83,7 @@ export function Combobox() {
           K
         </kbd>
       </Button>
-      <CommandDialog position="top" open={isOpen} onOpenChange={setIsOpen}>
+      <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
         <CommandInput
           placeholder="Search products..."
           value={query}
