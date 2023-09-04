@@ -11,6 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import { env } from "@/env.mjs";
 import AuthProvider from "@/lib/sessionProvider";
+import { loadEnvVariables } from "@/loadEnvironment";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,6 +69,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  async function load(){
+    await loadEnvVariables();
+  }
+  load();
   return (
     <>
       <AuthProvider>
