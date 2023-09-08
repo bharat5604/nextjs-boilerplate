@@ -8,10 +8,10 @@ interface LobbyLayoutProps {
 export default async function LobbyLayout({ children }: LobbyLayoutProps) {
   //   const user = await currentUser();
   const user = {
-    firstName: "bharat",
+    firstName: "tes",
     lastName: "singh",
     imageUrl: "",
-    username: "bharat",
+    username: "test",
   };
 
   return (
