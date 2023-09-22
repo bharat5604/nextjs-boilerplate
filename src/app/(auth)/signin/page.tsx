@@ -15,6 +15,7 @@ import {
 // import { OAuthSignIn } from "@/components/auth/oauth-signin";
 import { SignInForm } from "@/components/forms/signin-form";
 import { Shell } from "@/components/shells/shell";
+import { store } from "@/redux/store";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -25,6 +26,8 @@ export const metadata: Metadata = {
 export default async function SignInPage() {
   //   const user = await currentUser();
   //   if (user) redirect("/");
+  const data = store.getState().userReducer.users;
+  console.log("login page data", data);
 
   return (
     <Shell className="max-w-lg">
