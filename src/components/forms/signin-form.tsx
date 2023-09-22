@@ -25,7 +25,8 @@ import { PasswordInput } from "@/components/password-input";
 import signIn from "@/services/authService";
 import { AxiosError } from "axios";
 import Cookies from "js-cookie";
-
+import { store } from "@/redux/store";
+import { logIn } from "@/redux/features/authSlice";
 
 type Inputs = z.infer<typeof authSchema>;
 
@@ -45,7 +46,7 @@ export function SignInForm() {
   });
 
   function onSubmit(data: Inputs) {
-
+    return store.dispatch(logIn("bharat"));
 
     startTransition(async () => {
       try {
