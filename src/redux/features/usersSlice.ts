@@ -10,8 +10,10 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     getUsers: (state, action) => {
-      state.users = action.payload.users;
-      localStorage.setItem("user", JSON.stringify(action.payload.users));
+      // console.log("getUsers", action);
+
+      state.users = action.payload;
+      // localStorage.setItem("user", JSON.stringify(action.payload.users));
     },
     getUser: (state, action) => {
       const user = state.users.filter(

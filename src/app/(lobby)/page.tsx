@@ -1,11 +1,18 @@
 import { Shell } from "@/components/shells/shell";
+import ApiService from "@/helper/httpFetcher";
 import { logIn } from "@/redux/features/authSlice";
+import { getUsers } from "@/redux/features/usersSlice";
 import { store } from "@/redux/store";
 import React from "react";
 
 const testRedux = async () => {
   try {
-    return store.dispatch(logIn("bharat"));
+    const { data } = await ApiService.fetchData({
+      method: "get",
+      url: "users",
+    });
+    console.log("data", data);
+    store.dispatch(getUsers(data));
   } catch (error) {
     console.log("error", error);
   }
@@ -13,7 +20,9 @@ const testRedux = async () => {
 
 const Lobby = async () => {
   const data = await testRedux();
-  console.log("hello", data);
+  const data1 = store.getState().userReducer;
+
+  console.log("hello", data1);
   return <Shell>page</Shell>;
 };
 
