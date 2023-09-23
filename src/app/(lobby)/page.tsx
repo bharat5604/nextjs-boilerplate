@@ -20,9 +20,7 @@ const testRedux = async () => {
 
 const Lobby = async () => {
   const data = await testRedux();
-  const data1 = store.getState().userReducer;
 
-  console.log("hello", data1);
   return <Shell>page</Shell>;
 };
 

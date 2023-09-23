@@ -1,8 +1,12 @@
+import { store } from "./redux/store";
+
 export { default } from "next-auth/middleware";
 
 export function middleware(request: any) {
   const path = request.nextUrl.pathname;
   const isPublicPath = path === "/signin" || path === "/signup";
+  const data = store.getState().userReducer.users;
+  console.log("middleware", data);
 
   // const token = request.cookies.get("jwt")?.value;
 

@@ -16,6 +16,8 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Icons } from "@/components/icons";
+import { useSelector } from "react-redux";
+import { store } from "@/redux/store";
 
 interface MainNavProps {
   items?: MainNavItem[];

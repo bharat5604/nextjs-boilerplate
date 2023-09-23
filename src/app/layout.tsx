@@ -11,6 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
 import { env } from "@/env.mjs";
 import AuthProvider from "@/lib/sessionProvider";
+import { store } from "@/redux/store";
 
 const inter = Inter({ subsets: ["latin"] });
 

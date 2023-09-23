@@ -20,6 +20,7 @@ import { Combobox } from "@/components/combobox";
 import { Icons } from "@/components/icons";
 import { MainNav } from "@/components/layouts/main-nav";
 import { MobileNav } from "@/components/layouts/mobile-nav";
+import { store } from "@/redux/store";
 
 interface SiteHeaderProps {
   user?: {

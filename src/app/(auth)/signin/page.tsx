@@ -1,3 +1,4 @@
+// "use client";
 import { type Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
@@ -17,13 +18,13 @@ import { SignInForm } from "@/components/forms/signin-form";
 import { Shell } from "@/components/shells/shell";
 import { store } from "@/redux/store";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
-  title: "Sign In",
-  description: "Sign in to your account",
-};
+// export const metadata: Metadata = {
+//   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
+//   title: "Sign In",
+//   description: "Sign in to your account",
+// };
 
-export default async function SignInPage() {
+export default function SignInPage() {
   //   const user = await currentUser();
   //   if (user) redirect("/");
   const data = store.getState().userReducer.users;
