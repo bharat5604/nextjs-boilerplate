@@ -32,6 +32,7 @@ BaseService.interceptors.request.use(
       const { cookies } = await import("next/headers");
 
       let token = cookies().get("accessToken")?.value;
+      // console.log("access", token);
 
       token = tokena ? tokena : token;
       if (token) {
@@ -69,27 +70,31 @@ BaseService.interceptors.response.use(
     ) {
       originalRequest._retry = true;
       const accessToken = "";
-      if (isServer) {
-        const { cookies } = await import("next/headers");
-        const token = cookies().get("accessToken")?.value;
-        await axios.post(
-          `${baseURL}auth/logout`,
-          {
-            accessToken: token,
-          },
-          {
-            withCredentials: true,
-          }
-        );
-        store.dispatch(logOut());
-        // return BaseService(originalRequest);
-      } else {
-        await axios.post(`${baseURL}auth/logout`, null, {
-          withCredentials: true,
-        });
-        store.dispatch(logOut());
-        // return BaseService(originalRequest);
-      }
+      // if (isServer) {
+      //   const { cookies } = await import("next/headers");
+      //   const { redirect } = await import("next/navigation");
+      //   const token = cookies().get("accessToken")?.value;
+      //   await axios.post(
+      //     `${baseURL}auth/logout`,
+      //     {
+      //       accessToken: token,
+      //     },
+      //     {
+      //       withCredentials: true,
+      //     }
+      //   );
+      //   store.dispatch(logOut());
+      //   console.log("hi there");
+      //   redirect("/signin");
+
+      //   return BaseService(originalRequest);
+      // } else {
+      await axios.post(`${baseURL}auth/logout`, null, {
+        withCredentials: true,
+      });
+      store.dispatch(logOut());
+      // return BaseService(originalRequest);
+      // }
 
       // console.log('accessToken', accessToken);
     }

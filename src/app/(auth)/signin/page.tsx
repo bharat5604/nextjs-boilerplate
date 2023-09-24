@@ -28,7 +28,7 @@ export default function SignInPage() {
   //   const user = await currentUser();
   //   if (user) redirect("/");
   const data = store.getState().userReducer.users;
-  console.log("login page data", data);
+  // console.log("login page data", data);
 
   return (
     <Shell className="max-w-lg">
